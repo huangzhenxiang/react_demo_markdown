@@ -18,12 +18,28 @@ class Title extends Component {
 }
 
 class UploadInput extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      msg: 'test'
+    }
+  }
   handleUpload (event) {
     this.props.onInputChange(event)
     document.querySelector('.view').click()
   }
+  handleChange (e) {
+    this.setState({
+      msg: e.target.value
+    })
+  }
   render () {
-    return (<p><input onChange={this.handleUpload.bind(this)} name="file" id="markdown_file" type='file'></input></p>)
+    return (
+    <p>
+      <span>{this.state.msg}</span>
+      <input onChange={this.handleUpload.bind(this)} name="file" id="markdown_file" type='file'></input>
+      <input type="text" value={this.state.msg} onChange={this.handleChange.bind(this)}/>
+    </p>)
   }
 }
 
