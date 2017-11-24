@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import marked from 'marked'
 import './home.css'
 /**
@@ -189,8 +188,4 @@ class Home extends Component {
   }
 }
 
-ReactDOM.render(
-  <Home />,
-  document.getElementById('root')
-);
 export default Home;
